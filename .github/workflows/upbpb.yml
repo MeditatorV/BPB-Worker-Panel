@@ -76,6 +76,9 @@ jobs:
           echo "$TAG_NAME" > version.txt
           log "更新完成，新版本: $TAG_NAME"
 
+          # 输出 tag_name 供后续使用
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+
       - name: 提交更改
         if: success() # 仅在更新成功时提交
         uses: stefanzweifel/git-auto-commit-action@v5

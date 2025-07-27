@@ -64,6 +64,7 @@ jobs:
           if [ "$LOCAL_VERSION" = "$TAG_NAME" ] && [ "$FORCE_UPDATE" != "true" ]; then
             log "已是最新版本，无需更新"
             echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+            exit 0
           fi
 
           # 下载并更新
